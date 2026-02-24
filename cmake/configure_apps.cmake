@@ -156,3 +156,12 @@ if(APP MATCHES "^(CSTLA|CSTLPA|CSTLAW|CSTLPAW|CSTLF|CSTLFW|CSTLR|CSTLRW|CSTLRC|C
     message("Configuring UFS app in HAFS with Waves mode")
   endif()
 endif()
+
+if(APP MATCHES "^(datm2cice2sch)")
+   set(CMEPS      ON  CACHE BOOL "Enable CMEPS"               FORCE)
+   set(SCHISM     ON  CACHE BOOL "Enable SCHISM"              FORCE)
+   set(CDEPS      ON  CACHE BOOL "Enable CDEPS"               FORCE)
+   set(CICE6      ON  CACHE BOOL "Enable CICE6"               FORCE)
+   set(FMS        ON  CACHE BOOL "Enable FMS"                 FORCE)
+   message("Configuring UFS app in DATM-SCHISM-CICE mode for coupled testing")
+endif()
